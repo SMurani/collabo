@@ -32,17 +32,15 @@ HomeworkAsset::register($this);
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
       <!--header start-->
-      <header class="header black-bg">
-          <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
+ 
+      
           <?php 
-          /**
+          
     NavBar::begin([
         'brandLabel' => 'HelpMe',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'nav notify-row',
+            'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
@@ -69,16 +67,19 @@ HomeworkAsset::register($this);
     ]);
     NavBar::end();
            
-           */
+           
     ?>
-              
-<!--            logo start-->
+<!--              <header class="header black-bg">
+          <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            logo start
             <a href="index.html" class="logo"><b>HelpMe</b></a>
-<!--            logo end-->
+            logo end
             <div class="nav notify-row" id="top_menu">
-<!--                  notification start -->
+                  notification start 
                 <ul class="nav top-menu">
-<!--                     settings start -->
+                     settings start 
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="fa fa-tasks"></i>
@@ -146,8 +147,8 @@ HomeworkAsset::register($this);
                             </li>
                         </ul>
                     </li>
-<!--                     settings end 
-                     inbox dropdown start-->
+                     settings end 
+                     inbox dropdown start
                     <li id="header_inbox_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="fa fa-envelope-o"></i>
@@ -211,9 +212,9 @@ HomeworkAsset::register($this);
                             </li>
                         </ul>
                     </li>
-<!--                     inbox dropdown end -->
+                     inbox dropdown end 
                 </ul>
-<!--                  notification end -->
+                  notification end 
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
@@ -223,7 +224,7 @@ HomeworkAsset::register($this);
             	</ul>
             </div>
            
-        </header>
+        </header>-->
       <!--header end-->
       
       <!-- **********************************************************************************************************************************************************
@@ -244,39 +245,60 @@ HomeworkAsset::register($this);
                       </h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
-                      </a>
+                       <?=
+                        Html::a('<i class="fa fa-dashboard"></i> Dashboard ', 
+                                ['site/index'], 
+                                ['class' => 'active']) 
+                        ?>                     
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>UI Elements</span>
-                      </a>
+                      <?=
+                        Html::a('<i class="fa fa-desktop"></i> Available orders ', 
+                                ['vehicles/create'], 
+                                ['class' => '#']) 
+                        ?> 
                       <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
-                          <li><a  href="google_maps.html">Google Maps</a></li>
+                          <li><?=
+                        Html::a('<i class="fa fa-desktop"></i> Available ', 
+                                ['vehicles/create']) 
+                        ?> </li>
+                          <li><a  href="buttons.html">My Bid</a></li>
+                          <li><a  href="panels.html">Suggested</a></li>
+                   
                       </ul>
                   </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Components</span>
+                          <i class="fa fa-inbox"></i>
+                          <span>Messages</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
+                          <li>
+                               <li><?=
+                        Html::a('<i class="fa fa-inbox"></i> Inbox ', 
+                                ['messages/index']) 
+                        ?> </li>
+                         <li><?=
+                        Html::a('<i class="fa fa-inbox"></i> Create ', 
+                                ['messages/create']) 
+                        ?> </li>
                           <li><a  href="todo_list.html">Todo List</a></li>
                           <li><a  href="dropzone.html">Dropzone File Upload</a></li>
                           <li><a  href="inline_editor.html">Inline Editor</a></li>
                           <li><a  href="file_upload.html">Multiple File Upload</a></li>
                       </ul>
                   </li>
+                  <li>
+                     
+                            <?=
+                        Html::a('<i class="fa fa-upload fa-fw"></i> Server Rebooted', 
+                                ['vehicles/index'], 
+                                ['class' => 'sub-menu']) 
+                        ?>                         
+                            
+                        </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
@@ -356,7 +378,7 @@ HomeworkAsset::register($this);
       <!--main content start-->
       <section id="main-content">
           
-          <div class="col-sm-12">
+          <div class="col-sm-12" style="margin-top: 50px">
                     <?=  Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                 ]) 
@@ -366,10 +388,7 @@ HomeworkAsset::register($this);
         </div>
 
           </section>-->
-    
-
-   
-
+         
 
 
       <footer class="site-footer">
